@@ -1,1 +1,3 @@
 CS361 Project setup test
+
+Verified GitHub connection
