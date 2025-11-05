@@ -71,6 +71,7 @@ def require_nonempty(raw, field_name):
 def main_menu():
     while True:
         banner("Expense Tracker — Main Menu")
+        print("Track, organize, and review your spending to stay on budget")
         print("1. Add Expense")
         print("2. List Expenses")
         print("3. Delete Expense")
