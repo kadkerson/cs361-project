@@ -1,9 +1,7 @@
 import json
-import os
 import time
 from datetime import datetime, timedelta
 
-data_file = "expenses.json"
 
 # CRUD integration
 CRUD_REQUEST_FILE = "crud_requests.json"
@@ -45,7 +43,6 @@ def send_crud_request(command, data):
 def crud_get_all_expenses():
     resp = send_crud_request("RETRIEVE", {})
     if resp.get("status") == "success":
-        # When retrieving all, microservice uses 'items'
         return resp.get("items", [])
     else:
         show_notification(
@@ -151,10 +148,6 @@ IMPORT_EXPORT_RESPONSE_FILE = "import_export_responses.json"
 
 
 def send_import_export_request(operation, data):
-    """
-    Send a single IMPORT or EXPORT request to the import/export microservice
-    and wait for the first response object.
-    """
     # clear old responses
     try:
         with open(IMPORT_EXPORT_RESPONSE_FILE, "w", encoding="utf-8") as f:
