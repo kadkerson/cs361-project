@@ -2,8 +2,8 @@ import os
 import time
 import json
 
-DATABASE = "exampledatabase.txt"        # enter database location
-PIPELINE = "examplepipeline.txt"        # enter location + file extension for pipleine.txt
+DATABASE = "database.txt"        # enter database location
+PIPELINE = "pipeline.txt"        # enter location + file extension for pipleine.txt
 SLEEP_INTERVAL = 2                      # replace with number of seconds program should wait between checks
 
 
@@ -84,7 +84,7 @@ def write_reply(objects):
 # main
 
 def main():
-
+    print("search/filter microservice running...")
     while True:
         request_objects = check_request()
         if request_objects:
